@@ -21,9 +21,7 @@ public class BlogService {
             Blog blog = blogRepository.findById(id).orElseThrow(
                     () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
             );
-
             blog.update(requestDto);
             return blog.getId();
-
     }
 }

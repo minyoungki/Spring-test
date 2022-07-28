@@ -43,7 +43,6 @@ public class BlogPwService {
         Blog blog = blogRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
         );
-
         return blog.confirm(requestDto);
     }
 }

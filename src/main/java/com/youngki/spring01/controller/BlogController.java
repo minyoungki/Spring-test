@@ -35,9 +35,10 @@ public class BlogController {
 
 //    @PostMapping("/api/posts/{id}")
 //    public ApiResult<Boolean> postBlogId(@RequestParam("password") String password, @PathVariable Long id){
-//        boolean result = BlogPwService.checkPassword(id,password);
-//        return ApiUtils.success(rusult);
+//        boolean result = blogPwService.checkPassword(id,password);
+//        return ApiUtils.success(result);
 //    }
+
     @PostMapping("/api/blogs/post/{id}")
     public Boolean passwordBlog(@PathVariable Long id, @RequestBody PasswordDto requestDto) {
         return freeBoardRepository.confirm(id, requestDto);
